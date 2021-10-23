@@ -1,3 +1,4 @@
+#Task 2. Fourier Series for a Discontinuous Hat Signal.
 import numpy as np
 import matplotlib.pyplot as plt
 
