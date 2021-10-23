@@ -1,3 +1,4 @@
+#Task 1. Fourier Series for a Continuous – Time Hat Signal.
 import numpy as np
 import matplotlib.pyplot as plt
 
