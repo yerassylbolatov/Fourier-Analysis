@@ -1,3 +1,4 @@
+#3D
 from matplotlib.image import imread
 from mpl_toolkits.mplot3d import axes3d
 import numpy as np

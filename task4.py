@@ -1,3 +1,6 @@
+#Task 4 
+#𝑓(𝑡)=sin(2𝜋𝑓1𝑡)+sin(2𝜋𝑓2𝑡) 
+#frequencies 𝑓1 =50 𝐻𝑧 and 𝑓2 =120 𝐻𝑧.
 import numpy as np
 import matplotlib.pyplot as plt
 from numpy.core.numeric import indices

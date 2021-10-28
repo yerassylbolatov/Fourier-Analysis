@@ -1,14 +1,16 @@
+# Task 7 
+# Fast Fourier transform algorithm for image denoising and filtering. 
 from matplotlib.image import imread
 import numpy as np
 import matplotlib.pyplot as plt
 import os
 A = imread(os.path.join('Cotik.jpg'))
-B = np.mean(A, -1)
+B = np.mean(A, -1)  # Convert RGB to grayscale
 
-Bnoise = B + 220*np.random.randn(*B.shape).astype('uint8')
+Bnoise = B + 220*np.random.randn(*B.shape).astype('uint8') # Add some noise
 Bt = np.fft.fft2(Bnoise)
 Btshift = np.fft.fftshift(Bt)
-F = np.log(np.abs(Btshift)+1)
+F = np.log(np.abs(Btshift)+1) # Put FFT on log scale
 
 fig,axs = plt.subplots(2,2)
 
@@ -25,7 +27,7 @@ X,Y = np.meshgrid(np.arange(-ny/2+1,ny/2+1),np.arange(-nx/2+1,nx/2+1))
 R2 = np.power(X,2) + np.power(Y,2)
 ind = R2 < 150**2
 Btshiftfilt = Btshift * ind
-Ffilt = np.log(np.abs(Btshiftfilt)+1)
+Ffilt = np.log(np.abs(Btshiftfilt)+1) # Put FFT on log scale
 
 axs[1,1].imshow(Ffilt, cmap='gray')
 axs[1,1].title.set_text('Filtered FFT')

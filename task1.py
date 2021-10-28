@@ -2,14 +2,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-#define domain
+#Define domain
 dx = 0.001
 L = np.pi
 x = L * np.arange(-1+dx,1+dx,dx)
 n = len(x)
 nquart = int(np.floor(n/4))
 
-#define hat function
+#Define hat function
 f = np.zeros_like(x)
 f[nquart:2*nquart] = (4/n)*np.arange(1,nquart+1)
 f[2*nquart:3*nquart] = 1 - (4/n)*np.arange(0,nquart)
@@ -17,6 +17,7 @@ f[2*nquart:3*nquart] = 1 - (4/n)*np.arange(0,nquart)
 fig, (ax1,ax2) = plt.subplots(1,2)
 ax1.plot(x,f,'-',color='k',linewidth=2)
 
+#Compute Fourier series
 A0 = np.sum(f * np.ones_like(x)) * dx
 fFS = A0/2
 

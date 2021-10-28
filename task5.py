@@ -1,3 +1,5 @@
+# Task 5 
+# Two-dimensional Fourier transform via one-dimensional row-wise and column-wise fast Fourier transforms.
 from matplotlib.image import imread
 import numpy as np
 import matplotlib.pyplot as plt
@@ -8,10 +10,12 @@ B = np.mean(A, -1)
 
 fig,axs = plt.subplots(2,2)
 
+# Real image
 axs[0,0].imshow(A)
 axs[0,0].title.set_text('Image')
 axs[0,0].axis('off')
 
+# Grayscale image
 axs[0,1].imshow(B, cmap='gray')
 axs[0,1].title.set_text('Gray Image')
 axs[0,1].axis('off')
